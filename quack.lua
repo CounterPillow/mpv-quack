@@ -32,7 +32,7 @@ function engage_ducking(name, val)
         duck_timer = mp.add_periodic_timer(0.1, update_quack)
         orig_vol = mp.get_property_number("volume")
     else
-        if duck_timer.is_enabled() == false then
+        if duck_timer:is_enabled() == false then
             orig_vol = mp.get_property_number("volume")
             duck_timer:resume()
         end
