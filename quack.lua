@@ -31,10 +31,12 @@ function engage_ducking(name, val)
     if duck_timer == nil then
         duck_timer = mp.add_periodic_timer(0.1, update_quack)
         orig_vol = mp.get_property_number("volume")
+        update_quack() -- fire for immediate effect
     else
         if duck_timer:is_enabled() == false then
             orig_vol = mp.get_property_number("volume")
             duck_timer:resume()
+            update_quack()
         end
     end
 end
